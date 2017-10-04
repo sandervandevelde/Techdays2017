@@ -322,8 +322,8 @@ Now that you have registered a device, let's create the device which can submit 
 					if(errorCode == 0) {
 						numberOfCycles++;
 					}
-					if(numberOfCycles != 0 && numberOfCycles % 3 == 0) {
-						errorCode = 1;
+					if(numberOfCycles >= 10) {
+						throw new InterruptedException();
 					}
 
 					Thread.sleep(2000);
